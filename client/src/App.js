@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/header/header";
 import ListPlayers from "./components/listPlayers";
 import { Container } from "@material-ui/core";
@@ -6,13 +6,17 @@ import { useLocalStorage } from "./hooks/useLocalStorage";
 import "./App.css";
 
 function App() {
+
+    //  Attempt to load players from local storage
+    const [players, setPlayers] = useLocalStorage("players", []);
+
     return (
         <div>
             <Header />
 
             <div className="content">
                 <Container>
-                    <ListPlayers />
+                    <ListPlayers players={players} setPlayers={setPlayers} />
                 </Container>
             </div>
         </div>
