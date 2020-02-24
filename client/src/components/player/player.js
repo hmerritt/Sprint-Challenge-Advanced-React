@@ -1,4 +1,5 @@
 import React from "react";
+import { Card, CardContent, Typography } from "@material-ui/core";
 import "./player.css";
 
 class Player extends React.Component {
@@ -9,9 +10,19 @@ class Player extends React.Component {
     render() {
         return (
             <div className="player">
-                <h1> {this.props.player.name} </h1>
-                <h2> {this.props.player.country} </h2>
-                <h3> {this.props.player.searches} </h3>
+                <Card>
+                    <CardContent>
+                        <Typography variant="h5" component="h2">
+                            {this.props.player.name}
+                        </Typography>
+                        <Typography variant="body2" component="p">
+                            {this.props.player.country}
+                        </Typography>
+                        <Typography color="textSecondary" gutterBottom>
+                            <small>{this.props.player.searches} searches</small>
+                        </Typography>
+                    </CardContent>
+                </Card>
             </div>
         );
     }
