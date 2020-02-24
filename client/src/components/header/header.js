@@ -16,7 +16,7 @@ function Header() {
                 <Toolbar>
                     <SportsSoccerIcon className={styles.icon} />
                     <Typography variant="h6">
-                        Women's World Cup players
+                        Women's World Cup Players
                     </Typography>
                 </Toolbar>
             </Container>
