@@ -2,3 +2,9 @@
 .content {
     margin-top: 100px;
 }
+
+.players {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}

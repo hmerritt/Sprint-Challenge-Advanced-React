@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Player from "./player/player";
+import { Typography } from "@material-ui/core";
 import axios from "axios";
 
 class ListPlayers extends React.Component {
@@ -25,15 +26,20 @@ class ListPlayers extends React.Component {
 
     render() {
         return (
-            <div className="players">
-                {
-                    this.props.players.map((player, key) => {
-                        return (
-                            <Player player={player} key={key} />
-                        );
-                    })
-                }
-            </div>
+            <>
+                <div className="players">
+                    <Typography variant="h5" component="h2">
+                        Showing <strong>{this.props.players.length}</strong> Players
+                    </Typography>
+                    {
+                        this.props.players.map((player, key) => {
+                            return (
+                                <Player player={player} key={key} />
+                            );
+                        })
+                    }
+                </div>
+            </>
         );
     }
 }
